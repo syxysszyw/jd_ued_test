@@ -1,4 +1,76 @@
-﻿/* reset */
+﻿ /*reset */
 
 img{border: none;}
 ul li{list-style: none;}
+body, p, div, dl, dt, dd, ul, li, h3, img, header, section{padding: 0; margin: 0;}
+body{font: 14px/1.5 'Microsoft Yahei', '微软雅黑','SimSun','宋体',tahoma, Srial, helvetica, sans-serif; }
+h1, h2, h3, h4, h5, h6 {font-size: 100%;}
+em{font-style:normal;}
+a{ text-decoration: none; color:#333;} 
+
+
+
+body, .container{max-width: 1190px; min-width: 990px; margin: 0 auto; background: #f4f4f4;}
+.ie6 .container{width: 1190px;}
+/*
+* header
+*/
+
+header{width: 100%;}
+.ie6 header{width: 1190px;}
+/*banner starts*/
+.banner{position: relative; width: 100%; height: 304px; overflow: hidden;}
+.banner_list img{ border:none; width: 100%;}
+.banner ul{position: absolute;list-style-type: none;filter:alpha(Opacity=80); opacity: .8; z-index: 1000; margin:0; padding:0;bottom: 20px;left: 124px}
+.banner ul li{margin: 0px 5px; float: left; background: #000;cursor: pointer; width: 10px; height: 10px;}
+.banner ul li.on{background: #fff;}
+.banner .ctrl{width: 39px; height: 80px;position: absolute;z-index: 1000; background-image: url(../img/bg_all.png); background-repeat: no-repeat; cursor: pointer;}
+.banner #prev{background-position: -51px 0px; top: 110px; left: 20px;}
+.banner #prev:hover{background-position: -95px 0px;}
+.banner #next{background-position: -51px -83px; top: 110px; right: 20px;}
+.banner #next:hover{background-position: -95px -83px;}
+/*banner ends*/
+
+/*service starts*/
+.service{width: 100%; height: 90px; margin: 10px 0 30px 0; position: relative; background: #fff;}
+.ie6 .service{width: 1190px;}
+.serv-left-bg{width: 17px; height: 90px; background: url(../img/bg_all.png); background-repeat: no-repeat;background-position: 0px 0px; position: absolute; z-index: 1000; 
+}
+.serv-right-bg{width: 17px; height: 90px; background: url(../img/bg_all.png); background-repeat: no-repeat;background-position: -20px 0px; position: absolute; z-index: 1000; right: 0px;}
+.service dl{float: left; background: #fff; width: 20%; height: 40px;position: absolute;top: 0px; padding-left:56px; margin: 25px 0;}
+.ie6 .service dl{width: 245px;}
+.service .ser1{left: 17px; background-image: url(../img/bg_all.png);background-position: -158px 0px; background-repeat: no-repeat;}
+.service .ser2{left:307px; border-left: 1px solid #ddd; background-image: url(../img/bg_all.png);background-position: -158px -45px; background-repeat: no-repeat;}
+.ie6 .service .ser2{background-position: -158px -44px;}
+.service .ser3{left:597px; border-left: 1px solid #ddd; background-image: url(../img/bg_all.png);background-position: -158px -90px; background-repeat: no-repeat;}
+.service .ser4{left:887px; border-left: 1px solid #ddd; background-image: url(../img/bg_all.png);background-position: -158px -135px; background-repeat: no-repeat;}
+.ie6 .service .ser4{left:887px;}
+.service dl dt{font-size: 16px; font-weight: bold;}
+.service dl dd{font-size: 14px;}
+/*service ends
+
+/*
+ *content
+ */
+
+/*template starts*/
+.template-L{margin-right: 4%;width: 48%;float: left;}
+.ie6 .template-L{width: 400; margin-right: 30px;}
+.template-R{width: 48%;float: left;}
+.ie6 .template-R{width: 400;}
+.l-col{width: 33%; float: left; background: #fff;}
+.catalog{width: 190px; height: 274px;}
+.star-shop .template-title, .hot-brand .template-title, .product-top .template-title{height: 15px; line-height: 15px; border-left: 3px solid #565656; padding-left: 5px; margin-bottom: 15px;}
+.star-shop{padding:8px 12px 12px 17px; height: 91px; background: #fff; border-bottom: 1px solid #ddd;}
+.star-shop img{float: left;}
+.star-shop span{float: left; height: 48px; line-height: 48px; padding-left: 12px;}
+.hot-brand{padding:12px 12px 12px 17px; height: 91px; background: #fff;}
+.hot-brand img{float: left;}
+.hot-brand .brand-img{height: 30px; margin-right: 12px;}
+.hot-brand span{float: left; height: 48px; line-height: 48px; padding-left: 12px;}
+.r-col{float: left; border-left: 1px solid #ddd; background: #fff; width:380px;}
+.product-top{height: 40px; background: #fff; padding: 10px;}
+.product-list li{width: 160px; float: left; padding: 11px 15px;position: relative;}
+.product-list em{position: absolute;display: block;width: 84px; height: 34px; line-height: 34px; filter:alpha(Opacity=80); opacity: .8; background: #fff; top: 137px;right: 15px;}
+.product-list p{font-size: 12px; color: #777;}
+/*template ends*/
