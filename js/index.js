@@ -32,3 +32,39 @@
 		// 	index = index >= (count - 1)? 0 : ++index;
 		// 	$('.banner li').eq(index).trigger('click');
 		// }
+
+		$(function(){
+
+			/*ie67兼容before&after伪类*/
+			var $beforeAfter = function(dom) { 
+			if (document.querySelector || !dom && dom.nodeType !== 1) return; 
+				var content = dom.getAttribute("data-content") || ''; 
+				var before = document.createElement("before"), 
+					after = document.createElement("after"); 
+				// 内部content 
+				before.innerHTML = content; 
+				after.innerHTML = content; 
+				// 前后分别插入节点 
+				dom.insertBefore(before, dom.firstChild); 
+				dom.appendChild(after); 
+			};  
+			$beforeAfter($('.service')[0]);
+
+
+
+			$('.product-top-page').on('click', function(evt){
+				var _this = $(evt.target);
+				if(_this.data('id')){
+					_this.toggleClass('on').siblings().removeAttr('class');
+					var prodPageIndex = _this.data('id').charAt(4);
+					var target = _this.parent().parent().next().children().children().removeClass('productShow').eq(prodPageIndex-1).addClass('productShow');
+				}				
+			});
+
+			$('.banner-ul').on('click', function(evt){
+				var _this = $(evt.target);
+				if(_this.data('id')){
+					_this.addClass('on').siblings().removeAttr('class');
+				}				
+			});
+		});

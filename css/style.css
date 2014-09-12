@@ -31,6 +31,7 @@ body {
 
 a{
 	text-decoration: none;
+    color: #333;
 }
 ol, ul {
     list-style: none;
@@ -52,7 +53,6 @@ table {
 
 html{background: #f4f4f4;}
 .container{width: 1190px; margin: 0 auto; background: #f4f4f4; font-family: "Microsoft Yahei", '微软雅黑', 'SimSan', '宋体';}
-.ie6 .container{width: 1190px;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 .ie6 .clearfix, .ie7 .clearfix{zoom:1;}
 
@@ -63,11 +63,13 @@ html{background: #f4f4f4;}
 .header{width: 100%;}
 /*banner starts*/
 .banner-wrapper{position: relative; width: 100%; overflow: hidden; height: 304px;}
-.banner_list{width: 100%;}
+.banner_list{width: 100%; position: relative;}
+.banner_list a{display: block; position: absolute;}
 .banner_list img{ border:none;width: 100%}
 .ie8 .banner_list img{width: auto;}
 .banner-wrapper .banner-ul{position: absolute;list-style-type: none;filter:alpha(Opacity=80); opacity: .8; z-index: 1000; margin:0; padding:0;bottom: 20px;left: 124px}
 .banner-wrapper .banner-ul li{margin: 0px 5px; float: left; background: #000;cursor: pointer; width: 10px; height: 10px;}
+.ie6 .banner-wrapper .banner-ul li{height: 10px;line-height:0px; font-size: 0px;}
 .banner-wrapper .banner-ul li.on{background: #fff;}
 .banner-wrapper .ctrl{width: 39px; height: 80px;position: absolute;z-index: 1000; background-image: url(../img/bg_all.png); background-repeat: no-repeat; cursor: pointer;}
 .banner-wrapper #prev{background-position: -51px 0px; top: 50%; left: 10px; margin-top: -40px;}
@@ -78,19 +80,21 @@ html{background: #f4f4f4;}
 
 /*service starts*/
 .service{height: 90px; margin: 10px 0 30px 0; position: relative; background: #fff;}
-.service:before{width: 17px; height: 90px; background: url(../img/bg_all.png); background-repeat: no-repeat;background-position: 0px 0px; position: absolute; z-index: 1006;}
+.service:before{width: 17px; height: 17px; background: url(../img/bg_all.png); background-repeat: no-repeat;background-position: 0px 0px; position: absolute; content:" ";top: 0; left: 0;}
+.ie7 .service before{width: 17px; height: 17px; background: url(../img/bg_all.png); background-repeat: no-repeat;background-position: 0px 0px; position: absolute;content: attr(data-content);top: 0; left: 0;}
+.service:after{width: 17px; height: 17px; background: url(../img/bg_all.png); background-repeat: no-repeat;background-position: -23px 0px; position: absolute; content:" "; right: 0; bottom: 0;}
+.ie7 .service after{width: 17px; height: 17px; background: url(../img/bg_all.png); background-repeat: no-repeat;background-position: -23px 0px; position: absolute; content:" "; right: 0; bottom: 0;content: attr(data-content);}
 .ie6 .service{width: 1190px;}
 .serv-left-bg{width: 17px; height: 90px; background: url(../img/bg_all.png); background-repeat: no-repeat;background-position: 0px 0px; position: absolute; z-index: 1000; 
 }
 .serv-right-bg{width: 17px; height: 90px; background: url(../img/bg_all.png); background-repeat: no-repeat;background-position: -20px 0px; position: absolute; z-index: 1000; right: 0px;}
 .service dl{float: left; background: #fff; width: 18%; height: 40px;padding-left:6%; margin: 25px 0;}
-.ie6 .service dl{width: 245px;}
+.ie6 .service dl{width:19%; padding-left: 5%;}
 .service .ser1{background-image: url(../img/bg_all.png);background-position: -158px 0px; background-repeat: no-repeat; margin-left: 10px;}
 .service .ser2{border-left: 1px solid #ddd; background-image: url(../img/bg_all.png);background-position: -158px -45px; background-repeat: no-repeat;}
 .ie6 .service .ser2{background-position: -158px -44px;}
 .service .ser3{border-left: 1px solid #ddd; background-image: url(../img/bg_all.png);background-position: -158px -90px; background-repeat: no-repeat;}
 .service .ser4{border-left: 1px solid #ddd; background-image: url(../img/bg_all.png);background-position: -158px -135px; background-repeat: no-repeat;}
-.ie6 .service .ser4{left:887px;}
 .service dl dt{font-size: 16px; font-weight: bold;}
 .service dl dd{font-size: 12px;margin-top: 10px;}
 /*service ends
@@ -101,37 +105,52 @@ html{background: #f4f4f4;}
 
 /*template starts*/
 .template-L{width: 49%;float: left;}
-.ie6 .template-L{width: 400; margin-right: 30px;}
 .template-R{width: 49%;float: right;}
-.ie6 .template-R{width: 400;}
-.l-col, .r-col{width: 33%; float: left; background: #fff;}
+.ie6 .template-L, .ie6 template-R{height: 480px;}
+.l-col{width: 33%; float: left; background: #fff;}
 .catalog-a{display: block; height: 100%;}
 .catalog{width: 100%; height: auto;}
 .shop-title, .brand-title{height: 15px; line-height: 15px; border-left: 3px solid #565656; padding-left: 5px; margin-bottom: 15px; font-size: 14px;}
 .product-title{height: 15px; line-height: 15px; border-left: 3px solid #565656; padding-left: 5px;font-size: 14px; margin-top: 15px; float: left;}
-.star-shop{padding:4%; height: 91px; background: #fff; border-bottom: 1px solid #ddd;}
+.star-shop{padding:4%; height: 91px; background: #fff; border-bottom: 1px solid #ddd; overflow: hidden;}
 .star-shop img{float: left;}
-.star-shop span{float: left; height: 48px; line-height: 48px; padding-left: 10px; font-size: 12px; color: #333;}
+.star-shop span{float: left; height: 48px; width: 89px; line-height: 48px; padding-left: 10px; font-size: 12px; color: #333; cursor: pointer;overflow: hidden;white-space: nowrap;text-overflow:ellipsis; }
+.ie6 .star-shop span{width: 90px;}
 .star-shop span:hover{text-decoration: underline;}
 .hot-brand{padding: 5%; height: 91px; background: #fff;}
 .hot-brand img{float: left;}
 .hot-brand .brand-img{height: 30px; margin-right: 6px;}
+.ie6 .hot-brand .brand-img{margin-right: 6px;}
 .hot-brand span{float: left; height: 48px; line-height: 48px; padding-left: 12px;}
 .r-col{float: left; border-left: 1px solid #ddd; background: #fff; width:66%; height: 498px;}
+/*.ie6 .r-col{height: 440px;}*/
 .product-top{position: relative;}
 ul.product-top-page{float: right; width: 30px; margin-right: 20px; position: absolute;bottom: 10px; right: 0px;}
+.ie6 ul.product-top-page{width:40px; margin-right:0px;font-size: 0px; line-height: 0px;}
 .product-top-page li{width: 7px; height: 7px; background: #e0e0e0; cursor: pointer;float: left; margin-left: 3px;}
+.product-top-page .on{background: #b2b2b2;}
 .product-top-page li:hover{background: #b2b2b2; }
 .product-top{height: 40px; background: #fff;padding: 10px 10px 0 10px; border-bottom:1px solid #f4f4f4;}
 .product-container-div{overflow: hidden; position:relative; width: 100%;}
+.ie6 .product-container-div{height: 395px;}
 .procuct-container-ul{position: relative; height: 440px;}
-.procuct-container-ul .procuct-container-li{float: left; position: absolute;}
+.procuct-container-ul .procuct-container-li{float: left; position: absolute; display: none;}
+.procuct-container-ul .productShow{display: block;}
 .procuct-container-ul .pcl-1{left: 0;}
 .product-list li{float: left; padding: 2%;position: relative; width: 45%}
-.product-list p{font-size: 12px; color: #777; line-height: 16px;}
+.ie6 .product-list li{width: 140px; height: 185px; display: inline; padding-bottom: 0;}
+.product-list a{display: block;}
+.product-list p{font-size: 12px; color: #777; line-height: 16px; height: 18px;text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+.ie6 .product-list p{overflow: hidden; height: 30px;}
+.product-list a:hover p{color: #f08300;}
 .product-list em{display: block;position: absolute;background: rgba(255, 255, 255, .8);text-align: center;width: 84px; height: 34px; line-height: 34px; top: 150px; left: 100px;}
-.ie6 .product-list em, .ie7 .product-list em, .ie8 .product-list em{filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#aaffffff,endcolorstr=#aaffffff); }
-.product-list img{width: 100%;}
+.ie7 .product-list em, .ie8 .product-list em{top: 147px; left:97px;}
+.ie6 .product-list em, .ie7 .product-list em, .ie8 .product-list em{filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#aaffffff,endcolorstr=#aaffffff);}
+.product-list a:hover em{background: #f08300; color: #fff;}
+.ie6 .product-list em:hover, .ie7 .product-list em:hover, .ie8 .product-list em:hover{filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#00f08300,endcolorstr=#00f08300);}
+.product-list img{width: 176px;}
+.ie7 .product-list img, .ie8 .product-list img{width: 100%}
+.ie6 .product-list img{width: 145px;}
 /*template ends*/
 
 
@@ -144,7 +163,7 @@ ul.product-top-page{float: right; width: 30px; margin-right: 20px; position: abs
 	/*.banner_list{height: 253px;}*/
 	.ie7 .banner_list{height: 253px;}
 	.service{width: 990px;}	
-	.product-list em{width: 66px; height: 27px; line-height: 27px; top: 129px;left: 90px; font-size: 12px;}
+	.product-list em{width: 66px; height: 27px; line-height: 27px; top: 130px;left: 91px; font-size: 12px;}
 	.product-list img{width: 150px;}
 	.r-col{ height: 446px;}
 }
@@ -158,5 +177,3 @@ ul.product-top-page{float: right; width: 30px; margin-right: 20px; position: abs
 
 /*media query ends*/
 
-/*990px*/
-.ie7 .product-list .990body-ie7-product-list-em{top: 121px; left: 74px; width: 76px; height: 30px; font-size: 12px; line-height: 30px; display: block;position: absolute;}

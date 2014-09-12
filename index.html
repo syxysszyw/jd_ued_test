@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	
+	<link rel="shortcut icon" href="./my_favicon.ico"/>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 	<title>JD UED test-By Jieting.chen</title>
 </head>
@@ -19,29 +19,37 @@
 					<li data-id="3"></li>
 					<li data-id="4"></li>
 				</ul>
-				<div class="ctrl" id="prev"></div>
-				<div class="ctrl" id="next"></div>
+				<div class="ctrl pngfix" id="prev"></div>
+				<div class="ctrl pngfix" id="next"></div>
 				<div class="banner_list">
-					<a href="#" target="_blank"><img src="img/banner1.jpg" alt="asdrera" title="banner" class="lazy"></a>
-					<a href="#" target="_blank"><img src="img/banner2.jpg" alt="asdf" title="banner" class="lazy"></a>
-					<a href="#" target="_blank"><img src="img/banner3.jpg" alt="qe" title="banner" class="lazy"></a>
-					<a href="#" target="_blank"><img src="img/banner4.jpg" alt="fsf" title="banner" class="lazy"></a>
+					<a href="#" target="_blank" data-listIndex="1">
+						<img src="img/banner1.jpg" alt="asdrera" title="促销1" class="lazy">
+					</a>
+					<a href="#" target="_blank" data-listIndex="1">
+						<img src="img/banner2.jpg" alt="asdf" title="促销2" class="lazy">
+					</a>
+					<a href="#" target="_blank" data-listIndex="1">
+						<img src="img/banner3.jpg" alt="qe" title="促销3" class="lazy">
+					</a>
+					<a href="#" target="_blank" data-listIndex="1">
+						<img src="img/banner4.jpg" alt="fsf" title="促销4" class="lazy">
+					</a>
 				</div>
 			</div>
-			<div class="service">
-				<dl class="ser1">
+			<div class="service" data-content="">
+				<dl class="ser1 pngfix">
 					<dt>100%海外正品</dt>
 					<dd>“我”跟“它们”不是一路货色！</dd>
 				</dl>
-				<dl class="ser2">
+				<dl class="ser2 pngfix">
 					<dt>国际直邮</dt>
 					<dd>给你飞回来的“惊喜无限”！</dd>
 				</dl>
-				<dl class="ser3">
+				<dl class="ser3 pngfix">
 					<dt>便宜有好货</dt>
 					<dd>性价比，是我们的使命！</dd>
 				</dl>
-				<dl class="ser4">
+				<dl class="ser4 pngfix">
 					<dt>总有新奇</dt>
 					<dd>努力，只为买到你的“超喜欢”</dd>
 				</dl>
@@ -50,76 +58,114 @@
 		<div class="content clearfix">
 			<div class="template-L">
 				<div class="l-col">
-					<a href="javascript:;" class="catalog-a"><img src="img/catalog1.jpg" class="catalog lazy"></a>
+					<a href="javascript:;" class="catalog-a"><img src="img/catalog1.jpg" alt="美妆馆" title="美妆馆" class="catalog lazy"></a>
 					<div class="star-shop">
 						<h3 class="shop-title">明星店铺</h3>
 						<a href="javascript:;">
-							<img src="img/shop1.jpg" class="lazy">
-							<span>soso新妆专营店</span>
+							<img src="img/shop1.jpg" alt="soso新妆专营店" class="lazy">
+							<span>soso新妆专营店sdfa asdf are asfa </span>
 						</a>
 					</div>
 					<div class="hot-brand">
 						<h3 class="brand-title">热门品牌</h3>
-						<a href="javascript:;"><img src="img/brand1.jpg" class="lazy brand-img"></a>
-						<a href="javascript:;"><img src="img/brand2.jpg" class="lazy brand-img"></a>
+						<a href="javascript:;"><img src="img/brand1.jpg" alt="brand" title="brand" class="lazy brand-img"></a>
+						<a href="javascript:;"><img src="img/brand2.jpg" alt="brand" title="brand" class="lazy brand-img"></a>
 					</div>
 				</div>
 				<div class="r-col">
 					<div class="product-top">
 						<h3 class="product-title">推荐产品</h3>
 						<ul class="product-top-page">
-							<li class="on"></li>
-							<li></li>
-							<li></li>
+							<li class="on" data-id="page1"></li>
+							<li data-id="page2"></li>
+							<li data-id="page3"></li>
 						</ul>
 					</div>
 					<div class="product-container-div clearfix">
 						<ul class="procuct-container-ul clearfix">
-							<li class="procuct-container-li pcl-1">
+							<li class="procuct-container-li productShow pcl-1">
 								<ul class="product-list clearfix">
 									<li>
 										<a href="javascript:;">
-											<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<img src="img/item1.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜安热沙安耐晒沙安露/霜安热沙安耐晒沙安露/霜60ML</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/item1.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
 											<em>￥159.00</em>
 											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
 										</a>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
-										<em>￥159.00</em>
-										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										<a href="javascript:;">
+											<img src="img/item1.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
-										<em>￥159.00</em>
-										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
-									</li>
-									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
-										<em>￥159.00</em>
-										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										<a href="javascript:;">
+											<img src="img/item1.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
 									</li>
 								</ul>
 							</li>
 							<li class="procuct-container-li pcl-2">
 								<ul class="product-list clearfix">
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
+										<a href="javascript:;">
+											<img src="img/item2.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/item2.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/item2.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/item2.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="procuct-container-li pcl-3">
+								<ul class="product-list clearfix">
+									<li>
+										<img src="img/item3.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
 										<em>￥159.00</em>
 										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
+										<img src="img/item3.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
 										<em>￥159.00</em>
 										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
+										<img src="img/item3.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
 										<em>￥159.00</em>
 										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
+										<img src="img/item3.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
 										<em>￥159.00</em>
 										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
 									</li>
@@ -131,74 +177,114 @@
 			</div>
 			<div class="template-R">
 				<div class="l-col">
-					<a href="javascript:;" class="catalog-a"><img src="img/catalog2.jpg" class="catalog lazy"></a>
+					<a href="javascript:;" class="catalog-a"><img src="img/catalog2.jpg" alt="亲子馆" title="亲子馆" class="catalog lazy"></a>
 					<div class="star-shop">
 						<h3 class="shop-title">明星店铺</h3>
 						<a href="javascritp:;">
-							<img src="img/shop2.jpg" class="lazy">
+							<img src="img/shop2.jpg" alt="soso新妆专营店" class="lazy">
 							<span>soso新妆专营店</span>
 						</a>
 					</div>
 					<div class="hot-brand">
 						<h3 class="brand-title">热门品牌</h3>
-						<a href="javascript:;"><img src="img/brand3.jpg" class="lazy brand-img"></a>
-						<a href="javascript:;"><img src="img/brand4.jpg" class="lazy brand-img"></a>
+						<a href="javascript:;"><img src="img/brand3.jpg" alt="brand" title="brand" class="lazy brand-img"></a>
+						<a href="javascript:;"><img src="img/brand4.jpg" alt="brand" title="brand" class="lazy brand-img"></a>
 					</div>
 				</div>
 				<div class="r-col">
 					<div class="product-top">
 						<h3 class="product-title">推荐产品</h3>
 						<ul class="product-top-page">
-							<li class="on"></li>
-							<li></li>
-							<li></li>
+							<li class="on" data-id="page1"></li>
+							<li data-id="page2"></li>
+							<li data-id="page3"></li>
 						</ul>
 					</div>
 					<div class="product-container-div clearfix">
 						<ul class="procuct-container-ul clearfix">
-							<li class="procuct-container-li pcl-1">
+							<li class="procuct-container-li productShow pcl-1">
 								<ul class="product-list clearfix">
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
-										<em>￥159.00</em>
-										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										<a href="javascript:;">
+											<img src="img/item1.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
-										<em>￥159.00</em>
-										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										<a href="javascript:;">
+											<img src="img/item1.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
-										<em>￥159.00</em>
-										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										<a href="javascript:;">
+											<img src="img/item1.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
-										<em>￥159.00</em>
-										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										<a href="javascript:;">
+											<img src="img/item1.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
 									</li>
 								</ul>
 							</li>
 							<li class="procuct-container-li pcl-2">
 								<ul class="product-list clearfix">
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
+										<a href="javascript:;">
+											<img src="img/item2.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/item2.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/item2.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<img src="img/item2.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
+											<em>￥159.00</em>
+											<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="procuct-container-li pcl-3">
+								<ul class="product-list clearfix">
+									<li>
+										<img src="img/item3.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
 										<em>￥159.00</em>
 										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
+										<img src="img/item3.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
 										<em>￥159.00</em>
 										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
+										<img src="img/item3.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
 										<em>￥159.00</em>
 										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
 									</li>
 									<li>
-										<img src="img/item.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML">
+										<img src="img/item3.jpg" alt="【资生堂】安热沙安耐晒沙安露/霜60ML" title="【资生堂】安热沙安耐晒沙安露/霜60ML">
 										<em>￥159.00</em>
 										<p>【资生堂】安热沙安耐晒沙安露/霜60ML</p>
 									</li>
@@ -211,22 +297,26 @@
 		</div>
 	</div>	
 	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<!-- ie8-不兼容media query的解决方法-->
 	<!--[if lte IE 8]>
 		<script>
 		  var visibleWidth = document.documentElement.offsetWidth;
 		  if(document.documentElement.offsetWidth < 1190){
 		  	$('.container').css('width', '990px');
+		  	$('.service').css('width', '990px');
 		  	$('.banner-wrapper').css('height', '253px');		  	
 		  	$('.banner_list').css('height', '253px');
 		  	$('.r-col').css('height', '446px');
 		  	$('.product-list em').css({'top':'121px', 'left': '75px', 'width': '76px', 'height':'30px', 'font-size':'12px', 'line-height':'30px'});
 		  }
 		</script>
-	<![endif]-->		
+	<![endif]-->
+
+	<!-- ie6下兼容png -->	
 	<!--[if IE 6]>
 		<script src="js/DD_belatedPNG_0.0.8a.js" type="text/javascript" ></script>
 		<script>
-			DD_belatedPNG.fix('.ctrl');
+			DD_belatedPNG.fix('.pngfix');
 		</script> 
 	<![endif]-->	
 	<script type="text/javascript" src="js/index.js"></script>	
