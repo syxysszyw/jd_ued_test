@@ -4,3 +4,6 @@ ie7、8是通过判断docuemnt.documentElement.offsetWidth是否小于1190来给body添加一个
 
 v4
 还差lazyload & 轮播
+
+v5
+轮播好了，但是还没有lazyload
