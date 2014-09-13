@@ -22,7 +22,7 @@
 				var i = $(this).data('id') - 1;
 				index = i;
 				if(i >= count) return;
-				$('.banner_list li').filter(':visible').fadeOut(200).parent().children().eq(i).fadeIn(1000);
+				$('.banner_list li').filter(':visible').fadeOut(500).parent().children().eq(i).fadeIn(1000);
 				$(this).toggleClass('on').siblings().removeAttr("class");
 			});
 
@@ -45,9 +45,10 @@
 			$('.product-top-page').on('click', function(evt){
 				var _this = $(evt.target);
 				if(_this.data('id')){
+					_this.trigger('loadImg');
 					_this.toggleClass('on').siblings().removeAttr('class');
 					var prodPageIndex = _this.data('id').charAt(4);
-					var target = _this.parent().parent().next().children().children().removeClass('productShow').eq(prodPageIndex-1).addClass('productShow');
+					var target = _this.parent().parent().next().children().children().removeClass('productShow').eq(prodPageIndex-1).addClass('productShow').find('.lazy').trigger('sporty');
 				}				
 			});
 			/* --------------------End------------------------- */
