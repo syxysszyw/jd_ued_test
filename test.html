@@ -5,11 +5,12 @@
 	<title>Document</title>
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<style>
+		*{padding: 0; margin: 0;}
 		.banner{position: relative; width: 1191px; height: 304px; overflow: hidden;}
 		.banner_list img{ border:none;}
-		.banner ul{position: absolute;list-style-type: none;filter:alpha(Opacity=80); opacity: .8; z-index: 1000; margin:0; padding:0;bottom: 20px;left: 124px}
-		.banner ul li{margin: 0px 5px; float: left; background: #000;cursor: pointer; width: 10px; height: 10px;}
-		.banner ul li.on{background: #fff;}
+		.banner .page-ul{position: absolute;list-style-type: none;filter:alpha(Opacity=80); opacity: .8; z-index: 1000; margin:0; padding:0;bottom: 20px;left: 124px}
+		.banner ul.page-ul li{margin: 0px 5px; float: left; background: #000;cursor: pointer; width: 10px; height: 10px;}
+		.banner ul.page-ul li.on{background: #fff;}
 		.banner .ctrl{width: 39px; height: 80px;position: absolute;z-index: 1000; background-image: url(img/bg_all.png); background-repeat: no-repeat; cursor: pointer;}
 		.banner #prev{background-position: -51px 0px; top: 110px; left: 20px;}
 		.banner #prev:hover{background-position: -95px 0px;}
@@ -19,7 +20,7 @@
 </head>
 <body>
 	<div class="banner">
-		<ul>
+		<ul class="page-ul">
 			<li data-id="1" class="on"></li>
 			<li data-id="2"></li>
 			<li data-id="3"></li>
@@ -27,46 +28,62 @@
 		</ul>
 		<div class="ctrl" id="prev"></div>
 		<div class="ctrl" id="next"></div>
-		<div class="banner_list">
-			<a href="#" target="_blank"><img src="img/banner1.jpg" alt="asdrera" title="banner" class="lazy"></a>
-			<a href="#" target="_blank"><img src="img/banner2.jpg" alt="asdf" title="banner" class="lazy"></a>
-			<a href="#" target="_blank"><img src="img/banner3.jpg" alt="qe" title="banner" class="lazy"></a>
-			<a href="#" target="_blank"><img src="img/banner4.jpg" alt="fsf" title="banner" class="lazy"></a>
-		</div>
+		<ul class="banner_list">
+			<li>
+				<a href="#" target="_blank" data-listIndex="1">
+					<img src="img/banner1.jpg" alt="促销1" title="促销1" class="lazy">
+				</a>
+			</li>					
+			<li>
+				<a href="#" target="_blank" data-listIndex="1">
+					<img src="img/banner2.jpg" alt="促销2" title="促销2" class="lazy">
+				</a>
+			</li>
+			<li>
+				<a href="#" target="_blank" data-listIndex="1">
+					<img src="img/banner3.jpg" alt="促销3" title="促销3" class="lazy">
+				</a>
+			</li>
+			<li>
+				<a href="#" target="_blank" data-listIndex="1">
+					<img src="img/banner4.jpg" alt="促销4" title="促销4" class="lazy">
+				</a>
+			</li>
+		</ul>
 	</div>
 	<script>
 		var timer = index = 0, count, curIndex;
 		$(document).ready(function(){
 			count = $('.banner_list a').length;
-			$('.banner_list a:not(:first-child)').hide();
-			$('.banner li').on('click', function(){
+			$('.banner_list li:not(:first-child)').hide();
+			$('.page-ul li').on('click', function(){
 				var i = $(this).data('id') - 1;
 				index = i;
 				if(i >= count) return;
-				$('.banner_list a').filter(':visible').fadeOut(200).parent().children().eq(i).fadeIn(1000);
+				$('.banner_list li').filter(':visible').fadeOut(200).parent().children().eq(i).fadeIn(1000);
 				$('.banner').css('background', '');
 				$(this).toggleClass('on').siblings().removeAttr("class");
 			});
 
 			$('#prev').on('click', function(){
-				index = $('.banner_list a').filter(':visible').index();
+				index = $('.banner_list li').filter(':visible').index();
 				index = index <= 0 ? (count - 1) : --index;
-				$('.banner li').eq(index).trigger('click');
+				$('.page-ul li').eq(index).trigger('click');
 			});
 
 			$('#next').on('click', function(){
-				index = $('.banner_list a').filter(':visible').index();
+				index = $('.banner_list li').filter(':visible').index();
 				index = index >= (count - 1)? 0 : ++index;
-				$('.banner li').eq(index).trigger('click');
+				$('.page-ul li').eq(index).trigger('click');
 			});
 
 			timer = setInterval('showAuto()', 2000);
-			$('.banner').hover(function(){clearInterval(timer)}, function(){timer = setInterval('showAuto()', 2000);});
+			$('.banner-wrapper').hover(function(){clearInterval(timer)}, function(){timer = setInterval('showAuto()', 2000);});
 		});
 
 		function showAuto(){
 			index = index >= (count - 1)? 0 : ++index;
-			$('.banner li').eq(index).trigger('click');
+			$('.page-ul li').eq(index).trigger('click');
 		}
 	</script>
 </body>
