@@ -1,4 +1,4 @@
-﻿		var timer = index = 0, count, curIndex;
+﻿		var timer = index = 0, count;
 		$(function(){
 			/*------------ie67兼容before&after伪类-----------*/
 			var $beforeAfter = function(dom) { 
@@ -15,14 +15,16 @@
 			};  
 			$beforeAfter($('.service')[0]);
 			/* --------------------End------------------------- */
-			/*--------------------轮播图--------------------*/
+			/*--------------------轮播图------------------------*/
 			count = $('.banner_list li').length;
 			$('.banner_list li:not(:first-child)').hide();
-			$('.banner-page-ul li').on('click', function(){
-				var i = $(this).data('id') - 1;
+			$('.banner-page-ul li').on('click', function(){				
+				$('.banner_list li:animated').stop(true, true);
+				var i = $(this).index();
 				index = i;
 				if(i >= count) return;
-				$('.banner_list li').filter(':visible').fadeOut(500).parent().children().eq(i).fadeIn(1000);
+				$('.banner-wrapper').css('background', '');
+				$('.banner_list li').eq(i).fadeIn(4000).siblings().fadeOut(2000);
 				$(this).toggleClass('on').siblings().removeAttr("class");
 			});
 
@@ -38,8 +40,12 @@
 				$('.banner-page-ul li').eq(index).trigger('click');
 			});
 
-			timer = setInterval('showAuto()', 2000);
-			$('.banner-wrapper').hover(function(){clearInterval(timer)}, function(){timer = setInterval('showAuto()', 2000);});
+			timer = setInterval('showAuto()', 4000);
+			$('.banner-wrapper').hover(function(){
+				clearInterval(timer);
+			}, function(){
+				timer = setInterval('showAuto()', 4000);
+			});
 			/* --------------------End------------------------- */
 			/* --------------------产品切换-------------------- */
 			$('.product-top-page').on('click', function(evt){
@@ -52,8 +58,30 @@
 				}				
 			});
 			/* --------------------End------------------------- */
+			/*---------------------console output --------------*/
+
+			window.debug('面试官您好！我是来自广东外语外贸大学软件工程1101专业的陈洁婷，我希望成为一名前端开发工程师，谢谢您给我面试的机会！');
+			/*-------------------------End----------------------*/
+
+
 		});
 		function showAuto(){
 			index = index >= (count - 1)? 0 : ++index;
 			$('.banner-page-ul li').eq(index).trigger('click');
 		}
+
+		;(function(){
+		    if(!window.debug){
+			    window.debug = function(message){
+				  try{
+					   if(!window.console){
+						   window.console = {};
+						   window.console.log = function(){
+							  return;
+						   }
+					   }
+				    window.console.log(message + ' ');
+			      }catch(e){}
+				}
+			}
+		})();
